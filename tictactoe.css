@@ -1,0 +1,67 @@
+/* CSS declarations go here */
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Amatic SC', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #444;
+  margin: 0;
+}
+h1 {
+  font-size: 4rem;
+}
+h2 {
+  font-size: 3em;
+  font-weight: 400;
+}
+strong {
+  font-weight: 700;
+}
+.gameboard {
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  background: url(http://images.designtrends.com/wp-content/uploads/2015/12/22100402/Grungy-Chalkboard-Texture.jpg) 0 0 no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+.box {
+  flex: 1 16vw;
+  height: calc(50vh/3 - 3px); /* 3 boxes, excluding 3px border */
+  border: 3px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  cursor: crosshair;
+}
+
+.box:nth-child(n+2) {
+  border-left: none;
+}
+.box:nth-child(3n+1) {
+  border-left: 3px solid #fff;
+}
+.box:nth-child(n+4) {
+  border-top: none;
+}
+
+.box.disabled {
+  cursor: not-allowed;
+}
+
+.box.disabled:active {
+  cursor: not-allowed;
+  color: red;
+}
+
+.reset-game {
+  margin-top: 20px;
+}
